@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         
         horizontalInput = Input.GetAxis("Horizontal");
@@ -44,23 +44,15 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("walking", false);
         }
 
+        body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
 
-
-
-
-
-            body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
-
-
-
-        if(Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             Jump();
         }
 
-        
-    }
 
+    }
 
     private void Jump()
     {
@@ -72,10 +64,18 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-        public bool OnGround()
+    public bool OnGround()
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer);
         return raycastHit.collider != null;
 
     }
 }
+
+
+
+
+
+
+
+

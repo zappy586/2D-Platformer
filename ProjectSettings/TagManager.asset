@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: groundlayer
+    uniqueID: 1326054961
+    locked: 0
+  - name: playerlayer
+    uniqueID: 2788430663
+    locked: 0
