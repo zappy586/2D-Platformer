@@ -70,8 +70,6 @@ public class PlayerMovement : MonoBehaviour
         return raycastHit.collider != null;
 
     }
-
-    //Abbu palaan
 }
 
 
